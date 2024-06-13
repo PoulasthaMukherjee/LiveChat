@@ -4,7 +4,7 @@ import random
 from string import ascii_uppercase
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "h78r4gt68g84"  # Consider loading this from an environment variable or config file
+app.config["SECRET_KEY"] = "h78r4gt68g84"
 socketio = SocketIO(app)
 
 rooms = {}
@@ -97,5 +97,4 @@ def handle_disconnect():
     send({"name": name, "message": "has left the room"}, to=room)
     print(f"{name} has left the room {room}")
 
-if __name__ == "__main__":
-    socketio.run(app, debug=True)
+
